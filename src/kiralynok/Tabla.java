@@ -11,8 +11,8 @@ public class Tabla {
         T = new char[8][8];
         this.UresCella = UresCella;
 
-        for (int i = 0; i < T.length; i++) {
-            for (int j = 0; j < T.length; j++) {
+        for (int i = 0; i < sorok; i++) {
+            for (int j = 0; j < oszlopok; j++) {
                 T[i][j] = UresCella;
             }
         }
@@ -105,7 +105,7 @@ public class Tabla {
     public int UresSorokSzama() {
         int uSorSz = 0;
         boolean ures = true;
-        for (int i = 0; i < sorok; i++) {
+        for (int i = 0; i < oszlopok; i++) {
             ures = true;
             for (int j = 0; j < oszlopok; j++) {
                 if(T[i][j] == 'K'){
