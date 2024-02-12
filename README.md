@@ -1,3 +1,3 @@
 # Petrovai Asztrik Örs
-![alt text](https://github.com/aspik12/Kiralynok/blob/main/form1.jpg?raw=true)
-![alt text](https://github.com/aspik12/Kiralynok/blob/main/form2.jpg?raw=true)
+![Image Alt text](/images/form1.png "1kep"))
+![Image Alt text](/images/form2.png "2kep"))
