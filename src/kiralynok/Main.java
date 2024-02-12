@@ -1,15 +1,17 @@
 
 package kiralynok;
 
+import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.Path;
 
 public class Main {
     
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Feladat();
     }
 
-    private static void Feladat() {
+    private static void Feladat() throws IOException {
         Tabla tabla = new Tabla('#');
         System.out.println("4.feladat: Az üres tábla:");
         System.out.printf(tabla.Megjelenit());
@@ -22,8 +24,10 @@ public class Main {
         System.out.println("9.feladat: Üres oszlop és sorok száma:");
         System.out.println("Oszlopok:"+tabla.UresOszlopokSzama());
         System.out.println("Sorok:"+tabla.UresSorokSzama());
-        
-        
+
+        Path ut = Path.of("tablak64.txt");
+        Files.readString(ut);
+
     }
     
 }
