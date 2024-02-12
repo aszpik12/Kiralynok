@@ -11,6 +11,8 @@ public class Main {
         System.out.printf(tabla.Megjelenit());
         System.out.println(tabla.UresOszlop(0));
         System.out.println(tabla.UresSor(0));
+        System.out.println("Üres oszlopok száma:"+tabla.UresOszlopokSzama());
+        System.out.println("Üres sorok száma:"+tabla.UresSorokSzama());
     }
     
 }

@@ -4,6 +4,8 @@ public class Tabla {
 
     private char[][] T;
     private char UresCella;
+    private int sorok = 8;
+    private int oszlopok = 8;
 
     public Tabla(char UresCella) {
         T = new char[8][8];
@@ -39,8 +41,8 @@ public class Tabla {
 
     public String Megjelenit() {
         String megjel = "";
-        for (int i = 0; i < T.length; i++) {
-            for (int j = 0; j < T.length; j++) {
+        for (int i = 0; i < sorok; i++) {
+            for (int j = 0; j < oszlopok; j++) {
                 megjel += T[i][j];
             }
             megjel += "\n";
@@ -58,8 +60,8 @@ public class Tabla {
         if (oszlop > 7 || oszlop < 0) {
             kiir = "Nem megfelelő oszlop szám!\n";
         } else {
-            for (int i = 0; i < T.length; i++) {
-                if(T[i][oszlop]=='K'){
+            for (int i = 0; i < sorok; i++) {
+                if (T[i][oszlop] == 'K') {
                     kiir = "Van ebben az oszlopban legalább egy Királynő!";
                 }
             }
@@ -68,17 +70,55 @@ public class Tabla {
     }
 
     public String UresSor(int sor) {
-       String kiir = "Nincs ebben az sorban egyetlen egy Királynő se!";
+        String kiir = "Nincs ebben az sorban egyetlen egy Királynő se!";
         if (sor > 7 || sor < 0) {
             kiir = "Nem megfelelő sorszám!\n";
         } else {
-            for (int i = 0; i < T.length; i++) {
-                if(T[sor][i]=='K'){
+            for (int i = 0; i < oszlopok; i++) {
+                if (T[sor][i] == 'K') {
                     kiir = "Van ebben a sorban legalább egy Királynő!";
                 }
             }
         }
         return kiir;
+    }
+
+    public int UresOszlopokSzama() {
+        int uOszlopSz = 0;
+        boolean ures = true;
+        for (int i = 0; i < oszlopok; i++) {
+            ures = true;
+            for (int j = 0; j < sorok; j++) {
+                if(T[j][i] == 'K'){
+                    j=sorok;
+                    ures = false;
+                }
+            
+            }
+            if(ures==true){
+                uOszlopSz++;
+            }
+        }
+        return uOszlopSz;
+    }
+
+    public int UresSorokSzama() {
+        int uSorSz = 0;
+        boolean ures = true;
+        for (int i = 0; i < sorok; i++) {
+            ures = true;
+            for (int j = 0; j < oszlopok; j++) {
+                if(T[i][j] == 'K'){
+                    j=oszlopok;
+                    ures = false;
+                }
+            
+            }
+            if(ures==true){
+                uSorSz++;
+            }
+        }
+        return uSorSz;
     }
 
 }
