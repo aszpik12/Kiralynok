@@ -15,8 +15,21 @@ public class Tabla {
         }
     }
     
-    public void Elhelyez(){
+    public void Elhelyez(int N){
         
+        for (int i = 0; i < N;) {
+        int random = Random(7, 0);
+        int random2 = Random(7, 0);
+            if(T[random][random2] == UresCella){
+                T[random][random2] = 'K';
+                i++;
+            }
+        }
+    }
+
+    private int Random(int max, int min) {
+        int random = (int) (Math.random() * (max - min) + min);
+        return random;
     }
     
     public void Fajlbair(){
